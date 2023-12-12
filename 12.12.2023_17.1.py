@@ -9,6 +9,6 @@ try:
         return(res)
     k=int(input("Введите К: "))
     a = float(input("Введите a: "))
-    print(F(k, a))
+    print("ответ:"F(k, a))
 except:
     print("Ошибка!")
