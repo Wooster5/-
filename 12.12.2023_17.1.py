@@ -3,7 +3,10 @@ try:
         x1=1
         for i in range(n):
             x1=x1*x
-        return x1
+        if x==0:
+            return 0
+        else:
+            return x1
     def F(k, a):
         res=stepen(2.7, k)+stepen(a+1, -5)
         return(res)
