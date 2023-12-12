@@ -3,7 +3,10 @@ def IsLeapYear(Y):
         return True
     else:
         return False
-for i in range(5):
-    Y=int(input("Введите год: "))
-    if Y<0: print("Ошибка")
-    print(IsLeapYear(Y))
+try:
+    for i in range(5):
+        Y=int(input("Введите год: "))
+        if Y<0: print("Ошибка")
+        print(IsLeapYear(Y))
+except:
+    print("Ошибка")
