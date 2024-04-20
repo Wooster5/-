@@ -32,7 +32,7 @@ int main()
 	{
 		cout << "¬ведите слово "<<i<<": ";
 		string word;
-		cin >> word;
+		getline(cin, word);
 
 
 		if (Palindrom(word, 0, word.length()-1))

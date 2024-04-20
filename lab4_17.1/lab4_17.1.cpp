@@ -29,17 +29,23 @@ int Fib(int N)
 int main()
 {
 	int R;
+	int numbers[5];
 	locale::global(locale("Russian_Russia.1251"));
 	cout << "Введите 5 элементов для рассчёта чисел Фибоначчи: "<<endl;
-	for (int N = 1; N<=5; N++)
+	for (int N = 0; N<5; N++)
 	{
-		cout << N << " элемент последовательности: ";
-		cin >> R;
-		if (cin.fail() || R < 1)
-		{
-			cout << "Ошибка ввода";
-			return 0;
+		cout << N+1 << " элемент последовательности: ";
+		cin >> numbers[N];
+		if (!cin) {
+			cout << "Ошибка ввода" << endl;
+			return 1;
 		}
+		R= numbers[N];
+		/*if (cin.fail() || R < 1)
+		{
+			cout << "Ошибка ввода" << endl;
+			return 1;
+		}*/
 		cout <<R<<" элемент последовательности чисел Фибоначчи="<<Fib(R) <<endl;
 	}
 	return 0;
