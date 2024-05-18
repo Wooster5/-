@@ -8,7 +8,7 @@ int main()
     double perimeters[MAX_TRIANGLES], areas[MAX_TRIANGLES];
     int count;
 
-    readTriangles("triangles.txt", triangles, count);
+    readTriangles("triangles1.txt", triangles, count);
     calculateProperties(triangles, perimeters, areas, count);
     writeResults("results.txt", triangles, perimeters, areas, count);
 

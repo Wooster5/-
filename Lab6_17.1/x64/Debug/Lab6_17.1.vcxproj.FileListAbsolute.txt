@@ -1,1 +1,2 @@
 C:\!Kostya\Лабы по инфе\temp\Lab6_17.1\x64\Debug\Lab6_17.1.exe
+C:\!Kostya\Лабы по инфе\лабы c++\Lab6_17.1\x64\Debug\Lab6_17.1.exe

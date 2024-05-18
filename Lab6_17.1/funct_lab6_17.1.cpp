@@ -1,11 +1,10 @@
 #include "head_lab6_17.1.h"
 
-// Функция для чтения треугольников из файла
+
 void readTriangles(const string& filename, Triangle* triangles, int& count) {
     ifstream file(filename);
     if (!file) {
-        cout << "Невозможно открыть файл: " << filename << endl;
-        exit(1);
+        cout << "Ошибка";
     }
 
     count = 0;
@@ -23,7 +22,6 @@ void readTriangles(const string& filename, Triangle* triangles, int& count) {
 }
 
 
-// Функция для вычисления периметров и площадей треугольников
 void calculateProperties(const Triangle* triangles, double* perimeters, double* areas, int count) {
     for (int i = 0; i < count; ++i) {
         double semiPerimeter = (triangles[i].a + triangles[i].b + triangles[i].c) / 2;
@@ -33,7 +31,7 @@ void calculateProperties(const Triangle* triangles, double* perimeters, double* 
     }
 }
 
-// Функция для записи результатов в файл
+
 void writeResults(const string& filename, const Triangle* triangles, const double* perimeters, const double* areas, int count) {
     ofstream file(filename, ios::app);
     if (!file) {

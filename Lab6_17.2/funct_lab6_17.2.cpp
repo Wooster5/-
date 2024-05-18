@@ -4,7 +4,7 @@ int countWordOccurrences(const string& filename, const string& word) {
     ifstream file(filename);
     if (!file) {
         cerr << "Невозможно открыть файл: " << filename << endl;
-        return -1; // Возвращаем -1 в случае ошибки открытия файла
+        return -1; 
     }
 
     int count = 0;
