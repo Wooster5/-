@@ -15,12 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="array_utils.cpp">
+    <ClCompile Include="array_processor.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="array_utils.h">
+    <ClInclude Include="array_processor.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
