@@ -172,3 +172,9 @@ cython_debug/
 /last_lab/x64/Debug
 *.ipch
 /StaticLib/.vs/StaticLib/v17/ipch/AutoPCH/4f593c55feb5e54d/ARRAY_UTILS.ipch
+/StaticLib/x64/Debug/StaticLib.tlog/Cl.items.tlog
+/StaticLib/x64/Debug/StaticLib.tlog/CL.read.1.tlog
+/StaticLib/x64/Debug/StaticLib.tlog/CL.write.1.tlog
+/StaticLib/x64/Debug/StaticLib.tlog/Lib-link.read.1.tlog
+/StaticLib/x64/Debug/StaticLib.tlog/Lib-link.write.1.tlog
+/StaticLib/x64/Debug/StaticLib.tlog/Lib.command.1.tlog
