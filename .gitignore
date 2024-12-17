@@ -168,3 +168,7 @@ cython_debug/
 /StaticLib/x64/Debug/StaticLib.idb
 /StaticLib/x64/Debug/StaticLib.lib
 /StaticLib/x64/Debug/StaticLib.pdb
+/DynamicLib/x64/Debug
+/last_lab/x64/Debug
+*.ipch
+/StaticLib/.vs/StaticLib/v17/ipch/AutoPCH/4f593c55feb5e54d/ARRAY_UTILS.ipch
