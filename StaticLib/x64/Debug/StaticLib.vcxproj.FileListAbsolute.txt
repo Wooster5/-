@@ -1,0 +1,2 @@
+C:\!Kostya\Лабы по инфе\temp\StaticLib\x64\Debug\StaticLib.lib
+C:\!Kostya\Лабы по инфе\лабы c++\StaticLib\x64\Debug\StaticLib.lib
