@@ -159,3 +159,12 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 *.vsidx
+/StaticLib/.vs/StaticLib/v17/Browse.VC.db
+/StaticLib/.vs/StaticLib/v17/.suo
+*.db-wal
+*.opendb
+*.db-shm
+/StaticLib/x64/Debug/main.obj
+/StaticLib/x64/Debug/StaticLib.idb
+/StaticLib/x64/Debug/StaticLib.lib
+/StaticLib/x64/Debug/StaticLib.pdb
