@@ -17,7 +17,7 @@ int main() {
     int value = 8;
     int index = findElement(arr, value);
     if (index != -1) {
-        std::cout << "Ёлемент " << value << " найден на индексе " << index << "." << std::endl; //hjgkgk
+        std::cout << "Ёлемент " << value << " найден на индексе " << index << "." << std::endl; //hjgkgk123
     }
     else {
         std::cout << "Ёлемент " << value << " не найден." << std::endl;
