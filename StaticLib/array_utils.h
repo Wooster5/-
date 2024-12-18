@@ -15,4 +15,6 @@ int findElement(const std::vector<int>& arr, int value);
 
 double calculateAverage(const std::vector<int>& arr);
 
+int binarySearch(const std::vector<int>& arr, int value);
+
 #endif // ARRAY_UTILS_H
