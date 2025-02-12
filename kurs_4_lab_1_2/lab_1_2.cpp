@@ -2,7 +2,7 @@
 #include <set>
 using namespace std;
 
-// Функция для получения корректного числа в диапазоне [1, 9]
+
 int Input(const string& prompt) {
     int value;
     while (true) {
