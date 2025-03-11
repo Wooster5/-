@@ -81,7 +81,7 @@ void appendNumbersToFile(const string& filename) {
     }
 
     
-    outputFile << "\n10\n-5\n20\n-15\n30\n-25\n-7\n";
+    outputFile << "\n10\n-5\n20\n-15\n30\n-25\n-7\n10\n-5\n20\n-15\n30\n-25\n-7\n";
     outputFile.close();
 }
 

@@ -102,7 +102,7 @@ int main() {
     
     setlocale(LC_ALL, "rus");
 
-    ifstream inputFile("input.txt");
+    ifstream inputFile("input1.txt");
     if (!inputFile.is_open()) {
         cout << "Ошибка! Не удалось открыть файл input.txt." << endl;
         return 1;

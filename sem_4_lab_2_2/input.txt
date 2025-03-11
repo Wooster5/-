@@ -1,6 +1,0 @@
-Hello
-Hi
-Programming
-C++
-Hi
-zip
