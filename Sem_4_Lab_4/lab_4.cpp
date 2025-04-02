@@ -136,22 +136,8 @@ int partition(int arr[], int low, int high, SortStats& stats) {
     return i + 1;
 }
 
-const int INSERTION_THRESHOLD = 16;
 
 void quickSort(int arr[], int low, int high, SortStats& stats) {
-    if (high - low < INSERTION_THRESHOLD) {
-        // Используем сортировку вставками для маленьких массивов
-        for (int i = low + 1; i <= high; i++) {
-            int key = arr[i];
-            int j = i - 1;
-            while (j >= low && arr[j] > key) {
-                arr[j + 1] = arr[j];
-                j--;
-            }
-            arr[j + 1] = key;
-        }
-        return;
-    }
 
     if (low < high) {
         int pi = partition(arr, low, high, stats);
@@ -323,9 +309,15 @@ void customQuickSortTask() {
     int arr[size];
     SortStats stats;
 
-    cout << "\nВведите 15 элементов: ";
-    for (int i = 0; i < size; i++) {
-        cin >> arr[i];
+    for (int i = 0; i < size; ) {
+        if (cin >> arr[i]) {
+            i++; 
+        }
+        else {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Ошибка ввода! Пожалуйста, введите целое число: ";
+        }
     }
 
     quickSortDescendingAbs(arr, 0, size - 1, stats);
