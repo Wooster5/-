@@ -113,12 +113,11 @@ SortStats bubbleSort(int arr[], int n) {
 }
 
 int partition(int arr[], int low, int high, SortStats& stats) {
-    // Выбор медианы трёх
     int mid = low + (high - low) / 2;
     int pivotVal = max(min(arr[low], arr[mid]), min(max(arr[low], arr[mid]), arr[high]));
     int pivotIndex = (arr[low] == pivotVal) ? low : (arr[mid] == pivotVal) ? mid : high;
 
-    swap(arr[pivotIndex], arr[high]); // Переносим опорный элемент в конец
+    swap(arr[pivotIndex], arr[high]);
     int pivot = arr[high];
 
     int i = low - 1;
@@ -136,9 +135,7 @@ int partition(int arr[], int low, int high, SortStats& stats) {
     return i + 1;
 }
 
-
 void quickSort(int arr[], int low, int high, SortStats& stats) {
-
     if (low < high) {
         int pi = partition(arr, low, high, stats);
         quickSort(arr, low, pi - 1, stats);
@@ -157,36 +154,40 @@ SortStats quickSortWrapper(int arr[], int n) {
     return stats;
 }
 
-void generateArray(int arr[], int n, ArrayType type) {
+void generateBaseArray(int arr[], int n) {
     for (int i = 0; i < n; i++) {
         arr[i] = rand() % 10000;
     }
+}
+
+void prepareArray(int dest[], int n, ArrayType type, const int baseArray[]) {
+    copy(baseArray, baseArray + n, dest);
 
     switch (type) {
+    case RANDOM:
+        break;
     case SORTED:
-        sort(arr, arr + n);
+        sort(dest, dest + n);
         break;
     case REVERSED:
-        sort(arr, arr + n);
-        reverse(arr, arr + n);
+        sort(dest, dest + n);
+        reverse(dest, dest + n);
         break;
     case PARTIAL_25: {
         int part = n * 0.25;
-        sort(arr, arr + part);
+        sort(dest, dest + part);
         break;
     }
     case PARTIAL_50: {
         int part = n * 0.5;
-        sort(arr, arr + part);
+        sort(dest, dest + part);
         break;
     }
     case PARTIAL_75: {
         int part = n * 0.75;
-        sort(arr, arr + part);
+        sort(dest, dest + part);
         break;
     }
-    default:
-        break;
     }
 }
 
@@ -198,7 +199,7 @@ void printStatsTable(const string& methodName, const SortStats& stats) {
         << setw(15) << stats.iterations << endl;
 }
 
-void runSingleTest(int size, ArrayType type) {
+void runSingleTest(int size, ArrayType type, const int baseArray[]) {
     int* originalArr = nullptr;
     int* arrInsertion = nullptr;
     int* arrSelection = nullptr;
@@ -207,12 +208,12 @@ void runSingleTest(int size, ArrayType type) {
 
     try {
         originalArr = new int[size];
+        prepareArray(originalArr, size, type, baseArray);
+
         arrInsertion = new int[size];
         arrSelection = new int[size];
         arrBubble = new int[size];
         arrQuick = new int[size];
-
-        generateArray(originalArr, size, type);
 
         copy(originalArr, originalArr + size, arrInsertion);
         copy(originalArr, originalArr + size, arrSelection);
@@ -272,9 +273,14 @@ void runTests() {
 
     cout << "\n=== Запуск тестов производительности ===" << endl;
     for (int size : sizes) {
+        int* baseArray = new int[size];
+        generateBaseArray(baseArray, size);
+
         for (ArrayType type : arrayTypes) {
-            runSingleTest(size, type);
+            runSingleTest(size, type, baseArray);
         }
+
+        delete[] baseArray;
     }
 }
 
@@ -309,16 +315,14 @@ void customQuickSortTask() {
     int arr[size];
     SortStats stats;
 
-    for (int i = 0; i < size; ) {
-        if (cin >> arr[i]) {
-            i++; 
-        }
-        else {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Ошибка ввода! Пожалуйста, введите целое число: ";
-        }
+    srand(time(nullptr));
+
+    cout << "\nСгенерированный массив из 15 случайных чисел (-100..100):\n";
+    for (int i = 0; i < size; i++) {
+        arr[i] = rand() % 201 - 100;
+        cout << arr[i] << " ";
     }
+    cout << endl;
 
     quickSortDescendingAbs(arr, 0, size - 1, stats);
 
