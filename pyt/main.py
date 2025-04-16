@@ -167,10 +167,14 @@ def prepare_array(base_array, array_type):
 def linear_search(arr, target):
     stats = SearchStats()
     start_time = time.perf_counter()
+    found = False
     for i in range(len(arr)):
         stats.comparisons += 1
         if arr[i] == target:
+            found = True
             break
+    if not found:
+        raise ValueError(f"Элемент {target} не найден при линейном поиске")
     stats.time = (time.perf_counter() - start_time) * 1000
     return stats
 
@@ -180,13 +184,18 @@ def linear_search_with_sentinel(arr, target):
     start_time = time.perf_counter()
     n = len(arr)
     arr_copy = arr.copy()
-    arr_copy.append(target)  # Добавляем барьер
+    arr_copy.append(target)
     i = 0
     while True:
         stats.comparisons += 1
         if arr_copy[i] == target:
             break
         i += 1
+
+    # Проверяем, нашли ли реальный элемент или барьер
+    if i == n:
+        raise ValueError(f"Элемент {target} не найден при поиске с барьером")
+
     stats.time = (time.perf_counter() - start_time) * 1000
     return stats
 
@@ -196,16 +205,22 @@ def binary_search(sorted_arr, target):
     start_time = time.perf_counter()
     low = 0
     high = len(sorted_arr) - 1
+    found = False
     while low <= high:
         mid = (low + high) // 2
         stats.comparisons += 1
         if sorted_arr[mid] == target:
+            found = True
             break
         elif sorted_arr[mid] < target:
             low = mid + 1
         else:
             high = mid - 1
-        stats.comparisons += 1  # Для сравнения в ветке elif
+        stats.comparisons += 1
+
+    if not found:
+        raise ValueError(f"Элемент {target} не найден при бинарном поиске")
+
     stats.time = (time.perf_counter() - start_time) * 1000
     return stats
 
@@ -267,16 +282,23 @@ def run_single_test(size, array_type, base_array):
         print("\nРезультаты поиска:")
         print(f"{'Метод':<25}{'Сравнения':<15}{'Время (мс)':<15}")
 
-        linear_stats = linear_search(original_arr, target)
-        print_search_stats("Линейный без барьера", linear_stats)
+        try:
+            linear_stats = linear_search(original_arr, target)
+            print_search_stats("Линейный без барьера", linear_stats)
+        except ValueError as e:
+            print(f"Ошибка поиска: {str(e)}")
 
-        sentinel_stats = linear_search_with_sentinel(original_arr, target)
-        print_search_stats("Линейный с барьером", sentinel_stats)
+        try:
+            sentinel_stats = linear_search_with_sentinel(original_arr, target)
+            print_search_stats("Линейный с барьером", sentinel_stats)
+        except ValueError as e:
+            print(f"Ошибка поиска: {str(e)}")
 
-        binary_stats = binary_search(sorted_for_binary, target)
-        print_search_stats("Бинарный поиск", binary_stats)
-
-        print("-" * 75)
+        try:
+            binary_stats = binary_search(sorted_for_binary, target)
+            print_search_stats("Бинарный поиск", binary_stats)
+        except ValueError as e:
+            print(f"Ошибка поиска: {str(e)}")
 
     except Exception as e:
         print(f"Ошибка при тестировании для размера {size}: {str(e)}")
