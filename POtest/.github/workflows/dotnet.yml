@@ -13,6 +13,10 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    # ЭТОТ ШАГ ПОКАЖЕТ НАМ ПРАВДУ:
+    - name: List files in repository
+      run: ls -R
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
