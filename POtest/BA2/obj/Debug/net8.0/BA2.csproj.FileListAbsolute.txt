@@ -1,0 +1,13 @@
+C:\!Kostya\Лабы по инфе\POtest\BA2\obj\Debug\net8.0\BA2.csproj.AssemblyReference.cache
+C:\!Kostya\Лабы по инфе\POtest\BA2\obj\Debug\net8.0\BA2.GeneratedMSBuildEditorConfig.editorconfig
+C:\!Kostya\Лабы по инфе\POtest\BA2\obj\Debug\net8.0\BA2.AssemblyInfoInputs.cache
+C:\!Kostya\Лабы по инфе\POtest\BA2\obj\Debug\net8.0\BA2.AssemblyInfo.cs
+C:\!Kostya\Лабы по инфе\POtest\BA2\obj\Debug\net8.0\BA2.csproj.CoreCompileInputs.cache
+C:\!Kostya\Лабы по инфе\POtest\BA2\obj\Debug\net8.0\BA2.sourcelink.json
+C:\!Kostya\Лабы по инфе\POtest\BA2\bin\Debug\net8.0\BA2.deps.json
+C:\!Kostya\Лабы по инфе\POtest\BA2\bin\Debug\net8.0\BA2.dll
+C:\!Kostya\Лабы по инфе\POtest\BA2\bin\Debug\net8.0\BA2.pdb
+C:\!Kostya\Лабы по инфе\POtest\BA2\obj\Debug\net8.0\BA2.dll
+C:\!Kostya\Лабы по инфе\POtest\BA2\obj\Debug\net8.0\refint\BA2.dll
+C:\!Kostya\Лабы по инфе\POtest\BA2\obj\Debug\net8.0\BA2.pdb
+C:\!Kostya\Лабы по инфе\POtest\BA2\obj\Debug\net8.0\ref\BA2.dll

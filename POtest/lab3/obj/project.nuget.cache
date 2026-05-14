@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "F8aJRUk2Bd0=",
+  "success": true,
+  "projectFilePath": "C:\\!Kostya\\Лабы по инфе\\POtest\\lab3\\lab3.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\serki\\.nuget\\packages\\nunit\\4.5.1\\nunit.4.5.1.nupkg.sha512",
+    "C:\\Users\\serki\\.nuget\\packages\\restsharp\\114.0.0\\restsharp.114.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "J/J3ThbRCKg=",
+  "success": true,
+  "projectFilePath": "C:\\!Kostya\\Лабы по инфе\\POtest\\BA2\\BA2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\serki\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
+    "C:\\Users\\serki\\.nuget\\packages\\moq\\4.20.72\\moq.4.20.72.nupkg.sha512",
+    "C:\\Users\\serki\\.nuget\\packages\\nunit\\4.5.1\\nunit.4.5.1.nupkg.sha512",
+    "C:\\Users\\serki\\.nuget\\packages\\system.diagnostics.eventlog\\6.0.0\\system.diagnostics.eventlog.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
